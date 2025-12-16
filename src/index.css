@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Portfolio Design System - Glass Morphism & Modern Aesthetic */
+
+@layer base {
+  :root {
+    /* Light Theme - Premium Portfolio Colors */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+    
+    --primary: 215 25% 12%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 210 11% 71%;
+    --secondary-foreground: 215 25% 12%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 11% 71%;
+    
+    --accent: 292 76% 71%;
+    --accent-foreground: 215 25% 12%;
+    
+    --highlight: 25 95% 62%;
+    --highlight-foreground: 215 25% 12%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 292 76% 71%;
+
+    --radius: 1rem;
+    
+    /* Glass morphism and premium effects */
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 0 0% 100% / 0.2;
+    --shadow-glow: 292 76% 71% / 0.1;
+    --gradient-primary: linear-gradient(135deg, hsl(292 76% 71%), hsl(25 95% 62%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+  }
+
+  .dark {
+    /* Dark Theme - Premium Portfolio Colors */
+    --background: 215 28% 7%;
+    --foreground: 210 20% 98%;
+    
+    --card: 215 28% 9%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 215 28% 9%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 210 20% 98%;
+    --primary-foreground: 215 28% 7%;
+    
+    --secondary: 215 25% 17%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 215 25% 17%;
+    --muted-foreground: 210 11% 71%;
+    
+    --accent: 292 76% 71%;
+    --accent-foreground: 215 28% 7%;
+    
+    --highlight: 25 95% 62%;
+    --highlight-foreground: 215 28% 7%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 215 25% 17%;
+    --input: 215 25% 17%;
+    --ring: 292 76% 71%;
+    
+    /* Glass morphism dark theme */
+    --glass-bg: 0 0% 0% / 0.6;
+    --glass-border: 255 255% 255% / 0.1;
+    --shadow-glow: 292 76% 71% / 0.2;
+    --gradient-glass: linear-gradient(135deg, hsl(255 255% 255% / 0.1), hsl(255 255% 255% / 0.05));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism utilities */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  .glass-nav {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid hsl(var(--glass-border));
+  }
+  
+  /* Glow effects */
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--shadow-glow));
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Magnetic hover effect */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .magnetic:hover {
+    transform: scale(1.02) translateY(-2px);
+  }
+  
+  /* Mouse trail */
+  .mouse-trail {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, hsl(0 84% 60% / 0.6), transparent);
+    border-radius: 50%;
+    filter: blur(8px);
+    z-index: 9999;
+  }
+}
